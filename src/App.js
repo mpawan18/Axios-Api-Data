@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React from 'react'
+import Create from './component/Create';
+import {  Routes, Route } from 'react-router-dom';
+import Read from './component/Read';
+import Edit from './component/Edit';
+// import GetAxios from './component/GetAxios';
+// import PostAxois from './component/PostAxios';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Routes>
+        
+        <Route path='/' element={<Read/>} />
+        <Route exact path='/Create' element ={<Create/>} />
+        <Route exact path='/edit' element={ <Edit/>} />
+
+      </Routes>
+
+      {/* <GetAxios/> */}
+      {/* <PostAxois/> */}
+
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+
